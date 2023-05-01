@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!-- Add the code for the results_wheels.html template based on the following fields:
+brand, model_name, package_set, brake_type, tyres_type, weight_set, 
+weight_front, weight_rear, rim_depth, rim_internal_width, 
+rim_external_width, rim_material, sproks_material_front, 
+sproks_material_rear, hub_material_front, hub_material_rear, 
+bearings_type, suggested_price_euro, url_maker, url_shop, 
+item_component, item_price, discount, colour, edition
+-->
+    <h1>Wheels Search Results</h1>
+
+    <table>
+        <tr>
+            <!-- set the fields: brand, model_name, package_set, 
+                brake_type, tyres_type, weight_set, 
+weight_front, weight_rear, rim_depth, rim_internal_width, 
+rim_external_width, rim_material, sproks_material_front, 
+sproks_material_rear, hub_material_front, hub_material_rear, 
+bearings_type, suggested_price_euro, url_maker, url_shop, 
+item_component, item_price, discount, colour, edition -->
+            <th>Brand</th>
+            <th>Model Name</th>
+            <th>Package Set</th>
+            <th>Brake Type</th>
+            <th>Tyres Type</th>
+            <th> Weight Set </th>
+            <th> Weight Front </th>
+            <th> Weight Rear </th>
+            <th> Rim Depth </th>
+            <th> Rim Internal Width </th>
+            <th> Rim External Width </th>
+            <th> Rim Material </th>
+            <th> Sproks Material Front </th>
+            <th> Sproks Material Rear </th>
+            <th> Hub Material Front </th>
+            <th> Hub Material Rear </th>
+            <th> Bearings Type </th>
+            <th> Suggested Price Euro </th>
+            <th> URL Maker </th>
+            <th> URL Shop </th>
+            <th> Item Component </th>
+            <th> Item Price </th>
+            <th> Discount on Shop</th>
+            <th> Colour </th>
+            <th> Edition </th>
+        </tr>
+        {% for wheel in results %}
+        <!-- here we are setting  -->
+            <tr>
+                <td>{{ wheel[1] }}</td>
+                <td>{{ wheel[2] }}</td>
+                <td>{{ wheel[3] }}</td>
+                <td>{{ wheel[4] }}</td>
+                <td>{{ wheel[5] }}</td>
+                <td>{{ wheel[6] }}</td>
+                <td>{{ wheel[7] }}</td>
+                <td>{{ wheel[8] }}</td>
+                <td>{{ wheel[9] }}</td>
+                <td>{{ wheel[10] }}</td>
+                <td>{{ wheel[11] }}</td>
+                <td>{{ wheel[12] }}</td>
+                <td>{{ wheel[13] }}</td>
+                <td>{{ wheel[14] }}</td>
+                <td>{{ wheel[15] }}</td>
+                <td>{{ wheel[16] }}</td>
+                <td>{{ wheel[17] }}</td>
+                <td>{{ wheel[18] }}</td>
+                <td>{{ wheel[19] }}</td>
+                <td>{{ wheel[20] }}</td>
+                <td>{{ wheel[21] }}</td>
+                <td>{{ wheel[22] }}</td>
+                <td>{{ wheel[23] }}</td>
+                <td>{{ wheel[24] }}</td>
+                <td>{{ wheel[25] }}</td>
+                <td>{{ wheel[26] }}</td>
+
+            </tr>
+        {% endfor %}
+    </table>
+
+    <a href="{{ url_for('back') }}">Back</a>
+{% endblock %}

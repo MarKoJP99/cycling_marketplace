@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Pro Cycling Marketplace</h1>
+    <p>Welcome to the Pro Cycling Marketplace, your one-stop-shop for high-quality cycling products. We offer a wide range of wheels, framesets, and components to enhance your cycling experience. Browse our collection by selecting a product category below.</p>
+    
+    <div class="product-categories">
+        <div class="category">
+            <a href="{{ url_for('wheels_bp.wheels') }}">
+                <img src="{{ url_for('home_bp.static', filename='img/wheels.jpg') }}" alt="Wheels" width="200" height="200">
+                <h2>Wheels</h2>
+            </a>
+        </div>
+        <!-- Add more categories here as needed -->
+        <div class="category">
+            <!-- Replace with url_for when framesets blueprint is created -->
+            <a href="#">
+                <img src="{{ url_for('home_bp.static', filename='img/frameset.png') }}" alt="Frame Sets" width="200" height="200">
+                <h2>Frame Sets</h2>
+            </a>
+        </div>
+        <div class="category">
+            <!-- Replace with url_for when components blueprint is created -->
+            <a href="#">
+                <img src="{{ url_for('home_bp.static', filename='img/components.jpg') }}" alt="Components" width="200" height="200">
+                <h2>Components</h2>
+            </a>
+        </div>
+    </div>
+{% endblock %}

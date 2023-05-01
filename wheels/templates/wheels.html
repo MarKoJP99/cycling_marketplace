@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Wheels</h1>
+    <p>Find the perfect wheels for your bike from our wide selection of high-quality wheelsets.</p>
+    <form method="POST" action="{{ url_for('wheels_bp.results_wheels') }}">
+    
+        <label for="search">Search:</label>
+        <input type="text" name="search" required>
+        <button type="submit">Search</button>
+    </form>
+{% endblock %}
