@@ -1,84 +1,132 @@
 {% extends "base.html" %}
 
 {% block content %}
-<!-- Add the code for the results_wheels.html template based on the following fields:
-brand, model_name, package_set, brake_type, tyres_type, weight_set, 
-weight_front, weight_rear, rim_depth, rim_internal_width, 
-rim_external_width, rim_material, sproks_material_front, 
-sproks_material_rear, hub_material_front, hub_material_rear, 
-bearings_type, suggested_price_euro, url_maker, url_shop, 
-item_component, item_price, discount, colour, edition
--->
-    <h1>Wheels Search Results</h1>
+<h1>Wheels Search Results</h1>
 
-    <table>
+<div class="filters-container">
+    <!-- Filter inputs -->
+    <div class="filter-item">
+        <!-- filter by brake type -->
+        <label for="brake-type-filter">Brake type</label>
+        <select id="brake-type-filter">
+            <option value="">All Brake Types</option>
+            <option value="Rim">rim</option>
+            <option value="Disc">disc</option>
+        </select>
+    </div>
+
+    <div class="filter-item">
+        <!--  filter by tyres type  -->
+        <label for="tyres-type-filter">Tyres type</label>
+        <select id="tyres-type-filter">
+            <option value="">All Tyres Types</option>
+            <option value="clincher">clincher</option>
+            <option value="tubular">tubular</option>
+            <option value="tubeless">tubeless</option>
+        </select>
+    </div>
+
+    <div class="filter-item">
+        <!--  filter by set weight  -->
+        <label for="weight-set-filter-value">Weight Set</label>
+        <select id="weight-set-filter-operator">
+            <option value="">All Weights</option>
+            <option value="less">Less Than</option>
+            <option value="more">More Than</option>
+        </select>
+        <input type="filter-number" id="weight-set-filter-value">
+    </div>
+
+    <div class="filter-item">
+        <!--  filter by rim material    -->
+        <laber for="rim-material-filter">Rim Material</laber>
+        <select id="rim-material-filter">
+            <option value="">All Rim Materials</option>
+            <option value="Aluminum">aluminum</option>
+            <option value="Carbon">carbon</option>
+        </select>
+    </div>
+
+    <div class="filter-item">
+        <!--  Suggested Price Euro  -->
+        <label for="suggested-price-value">Suggested Price</label>
+        <select id="price-set-filter-operator">
+            <option value="">All Prices</option>
+            <option value="less">Less Than</option>
+            <option value="more">More Than</option>
+        </select>
+        <input type="filter-number" id="suggested-price-value">
+    </div>
+
+    <div class="filter-item">
+        <!-- Filter and reset buttons -->
+        <button id="filter-button">Apply Filters</button>
+        <button id="reset-button">Reset Filters</button>
+    </div>
+</div>
+
+<!-- Results table -->
+<table id="results-table">
+    <tr>
+        <th>Brand</th>
+        <th>Model Name</th>
+        <th>Package Set</th>
+        <th>Brake Type</th>
+        <th>Tyres Type</th>
+        <th> Weight Set </th>
+        <th> Weight Front </th>
+        <th> Weight Rear </th>
+        <th> Rim Depth </th>
+        <th> Rim Internal Width </th>
+        <th> Rim External Width </th>
+        <th> Rim Material </th>
+        <th> Sproks Material Front </th>
+        <th> Sproks Material Rear </th>
+        <th> Hub Material Front </th>
+        <th> Hub Material Rear </th>
+        <th> Bearings Type </th>
+        <th> Suggested Price Euro </th>
+        <th> URL Maker </th>
+        <th> URL Shop </th>
+        <th> Item Component </th>
+        <th> Item Price </th>
+        <th> Discount on Shop</th>
+        <th> Colour </th>
+        <th> Edition </th>
+    </tr>
+    {% for wheel in results %}
         <tr>
-            <!-- set the fields: brand, model_name, package_set, 
-                brake_type, tyres_type, weight_set, 
-weight_front, weight_rear, rim_depth, rim_internal_width, 
-rim_external_width, rim_material, sproks_material_front, 
-sproks_material_rear, hub_material_front, hub_material_rear, 
-bearings_type, suggested_price_euro, url_maker, url_shop, 
-item_component, item_price, discount, colour, edition -->
-            <th>Brand</th>
-            <th>Model Name</th>
-            <th>Package Set</th>
-            <th>Brake Type</th>
-            <th>Tyres Type</th>
-            <th> Weight Set </th>
-            <th> Weight Front </th>
-            <th> Weight Rear </th>
-            <th> Rim Depth </th>
-            <th> Rim Internal Width </th>
-            <th> Rim External Width </th>
-            <th> Rim Material </th>
-            <th> Sproks Material Front </th>
-            <th> Sproks Material Rear </th>
-            <th> Hub Material Front </th>
-            <th> Hub Material Rear </th>
-            <th> Bearings Type </th>
-            <th> Suggested Price Euro </th>
-            <th> URL Maker </th>
-            <th> URL Shop </th>
-            <th> Item Component </th>
-            <th> Item Price </th>
-            <th> Discount on Shop</th>
-            <th> Colour </th>
-            <th> Edition </th>
+            <td>{{ wheel[1] }}</td>
+            <td>{{ wheel[2] }}</td>
+            <td>{{ wheel[3] }}</td>
+            <td>{{ wheel[4] }}</td>
+            <td>{{ wheel[5] }}</td>
+            <td>{{ wheel[6] }}</td>
+            <td>{{ wheel[7] }}</td>
+            <td>{{ wheel[8] }}</td>
+            <td>{{ wheel[9] }}</td>
+            <td>{{ wheel[10] }}</td>
+            <td>{{ wheel[11] }}</td>
+            <td>{{ wheel[12] }}</td>
+            <td>{{ wheel[13] }}</td>
+            <td>{{ wheel[14] }}</td>
+            <td>{{ wheel[15] }}</td>
+            <td>{{ wheel[16] }}</td>
+            <td>{{ wheel[17] }}</td>
+            <td>{{ wheel[18] }}</td>
+            <td>{{ wheel[19] }}</td>
+            <td>{{ wheel[20] }}</td>
+            <td>{{ wheel[21] }}</td>
+            <td>{{ wheel[22] }}</td>
+            <td>{{ wheel[23] }}</td>
+            <td>{{ wheel[24] }}</td>
+            <td>{{ wheel[25] }}</td>
+            <td>{{ wheel[26] }}</td>
         </tr>
-        {% for wheel in results %}
-        <!-- here we are setting  -->
-            <tr>
-                <td>{{ wheel[1] }}</td>
-                <td>{{ wheel[2] }}</td>
-                <td>{{ wheel[3] }}</td>
-                <td>{{ wheel[4] }}</td>
-                <td>{{ wheel[5] }}</td>
-                <td>{{ wheel[6] }}</td>
-                <td>{{ wheel[7] }}</td>
-                <td>{{ wheel[8] }}</td>
-                <td>{{ wheel[9] }}</td>
-                <td>{{ wheel[10] }}</td>
-                <td>{{ wheel[11] }}</td>
-                <td>{{ wheel[12] }}</td>
-                <td>{{ wheel[13] }}</td>
-                <td>{{ wheel[14] }}</td>
-                <td>{{ wheel[15] }}</td>
-                <td>{{ wheel[16] }}</td>
-                <td>{{ wheel[17] }}</td>
-                <td>{{ wheel[18] }}</td>
-                <td>{{ wheel[19] }}</td>
-                <td>{{ wheel[20] }}</td>
-                <td>{{ wheel[21] }}</td>
-                <td>{{ wheel[22] }}</td>
-                <td>{{ wheel[23] }}</td>
-                <td>{{ wheel[24] }}</td>
-                <td>{{ wheel[25] }}</td>
-                <td>{{ wheel[26] }}</td>
+    {% endfor %}
+</table>
 
-            </tr>
-        {% endfor %}
-    </table>
+<a href="{{ url_for('back') }}">Back</a>
+<script src="{{ url_for('wheels_bp.static', filename='js/filter_wheels.js') }}"></script>
 
-    <a href="{{ url_for('back') }}">Back</a>
 {% endblock %}
