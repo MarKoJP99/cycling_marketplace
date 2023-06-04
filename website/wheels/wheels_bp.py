@@ -1,5 +1,5 @@
 from flask import Blueprint, render_template, request, url_for, redirect
-from wheels.db import search_wheels  # Updated the import statement
+from website.wheels.db import search_wheels
 
 
 wheels_bp = Blueprint("wheels_bp", __name__, template_folder="templates", static_folder="static")
